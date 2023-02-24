@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_literalnie.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+    <title>Literalnie Cheat Shit</title>
+</head>
+<body>
+    <div class="main-parent">
+        <form class="parent" method="post">
+            {% csrf_token %}
+            <div class="div-title">
+                <div class="div-title-1">LITERALNIE</div>
+                <div class="div-title-2">CHEAT SHIT</div>
+            </div>
+            <div class="div-line"><p class="div-line-p">Litery należy wpisywać oddzielając spacją w okna z czarnym obramowaniem</p></div>
+            <div class="div-option">
+                <div class="description-box">
+                    <div class="icon-number" id="icon-1">1</div>
+                    <div class="description"><p class="description-p">Litery, które na pewno nie występują w słowie</p></div>
+                </div>
+                <div class="div-input">
+                    <label><input class="long-input" type="text" name="option-1" value="{{ option_1 }}"></label>
+                </div>
+            </div>
+            <br>
+            <div class="div-option">
+                <div class="description-box">
+                    <div class="icon-number" id="icon-2">2</div>
+                    <div class="description"><p class="description-p">Litery, które na pewno występują w słowie</p></div>
+                </div>
+                <div class="div-input">
+                    <label><input class="long-input" type="text" name="option-2" value="{{ option_2 }}"></label>
+                </div>
+            </div>
+            <br>
+            <div class="div-option">
+                <div class="description-box">
+                    <div class="icon-number" id="icon-3">3</div>
+                    <div class="description"><p class="description-p">Litery, które na pewno występują na danych pozycjach</p></div>
+                </div>
+                <div class="div-input">
+                    <label><input class="short-input" type="text" name="option-3-1" value="{{ option_3_1 }}" maxlength="1"></label>
+                    <label><input class="short-input" type="text" name="option-3-2" value="{{ option_3_2 }}" maxlength="1"></label>
+                    <label><input class="short-input" type="text" name="option-3-3" value="{{ option_3_3 }}" maxlength="1"></label>
+                    <label><input class="short-input" type="text" name="option-3-4" value="{{ option_3_4 }}" maxlength="1"></label>
+                    <label><input class="short-input" type="text" name="option-3-5" value="{{ option_3_5 }}" maxlength="1"></label>
+                </div>
+            </div>
+            <br>
+            <div class="div-option">
+                <div class="description-box">
+                    <div class="icon-number" id="icon-4">4</div>
+                    <div class="description"><p class="description-p">Litery, które występują w słowie, ale na pewno nie występują na danych pozycjach</p></div>
+                </div>
+                <div class="div-input">
+                    <label><input class="short-input" type="text" name="option-4-1" value="{{ option_4_1 }}"></label>
+                    <label><input class="short-input" type="text" name="option-4-2" value="{{ option_4_2 }}"></label>
+                    <label><input class="short-input" type="text" name="option-4-3" value="{{ option_4_3 }}"></label>
+                    <label><input class="short-input" type="text" name="option-4-4" value="{{ option_4_4 }}"></label>
+                    <label><input class="short-input" type="text" name="option-4-5" value="{{ option_4_5 }}"></label>
+                </div>
+            </div>
+            <br>
+            <div class="div-submit-button">
+                <button type="submit" class="submit-button">Zatwierdź</button>
+            </div>
+            <br>
+            <div class="div-line"><p class="div-line-p">Ściągawka do gry Literalnie.fun made by 321nomyzS</p></div>
+            <div class="error-message"><p class="error-message-p">{{ error_mess_1 }}</p></div>
+            <input type="hidden" name="words-list" value="{{ words_list }}">
+        </form>
+        <div class="line-h"></div>
+        <div class="left-part">
+            <div class="result-list">
+                <div class="result-list-head">
+                    <h1 class="result-list-h1">Lista słów:</h1>
+                    </div>
+                        {% for word in words_list %}
+                            <div class="div-result-box">
+                                <div class="div-result">
+                                        <p class="div-result-word">{{ word.1|title }}</p>
+                                        <p class="div-result-score">{{ word.0 }}</p>
+                                </div>
+                                <a href="{% url 'delete' word=word.1 %}"><button class="button-delete">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button></a>
+                            </div>
+                        {% endfor %}
+                </div>
+            <div class="div-result-box" id="div-add-box" method="get">
+                <input name="word" class="div-add-input">
+                <button class="button-add">
+                    <span class="material-symbols-outlined">done</span>
+                    <p>Dodaj do bazy</p>
+                </button>
+                <script>
+                    // Znajdź przycisk "Dodaj do bazy"
+                    var addButton = document.querySelector('.button-add');
+
+                    // Dodaj nasłuchiwanie zdarzenia "click"
+                    addButton.addEventListener('click', function() {
+                      // Pobierz wartość pola tekstowego
+                      var wordInput = document.querySelector('.div-add-input');
+                      var word = wordInput.value;
+
+                      // Utwórz adres URL
+                      var url = 'add/' + encodeURIComponent(word);
+
+                      // Przekieruj użytkownika do nowej strony
+                      window.location.href = url;
+                    });
+                </script>
+            </div>
+            <div class="error-message-add">
+                <p class="error-message-p" id="error-message-p-2">{{ error_mess_2 }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

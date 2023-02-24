@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_literalnie.css' %}">
+    <title>Literalnie Cheat Shit | Instrukcja</title>
+</head>
+<body class="body-instr">
+    <div class="main-parent-instr">
+        <div class="main-parent-instr-1">
+            <div class="icon-letter" id="letter-1">L</div>
+            <div class="icon-letter" id="letter-2">I</div>
+            <div class="icon-letter" id="letter-3">T</div>
+            <div class="icon-letter" id="letter-5">E</div>
+            <div class="icon-letter" id="letter-6">R</div>
+            <div class="icon-letter" id="letter-7">A</div>
+            <div class="icon-letter" id="letter-8">L</div>
+            <div class="icon-letter" id="letter-9">N</div>
+            <div class="icon-letter" id="letter-10">I</div>
+            <div class="icon-letter" id="letter-11">E</div>
+        </div>
+        <div class="instr">
+            <h1 class="instr-h1">Instrukcja do Literalnie Cheat Shit</h1>
+            <ol>
+                <li class="instr-li">Literalnie Cheat Shit jest aplikacją do pomocy w znalezieniu słów spełniających podane warunki,</li>
+                <li class="instr-li">Litery należy wpisywać oddzielając je spacją w wyznaczonych polach.</li>
+                <li class="instr-li">Po zatwierdzeniu warunków, po prawej stronie ekranu zostają wypisane maksymalnie 100 słów.</li>
+                <li class="instr-li">Słowa pozycjonowane są według konkretnego mechanizmu, który uwzględnia częstotliwość występowania liter w słowach w języku polskim.</li>
+                <li class="instr-li">Baza słów jest bardzo duża. W grze Literalnie rzeczowniki są w mianowniku. Możemy usunąć słowo z bazy z poziomu aplikacji. Wystarczy nacisnąć czerwony przycisk po prawej stronie słowa.</li>
+                <li class="instr-li">Pamiętaj, że największa zabawa jest wtedy, gdy odgadniesz słowo sam. Powodzenia!</li>
+            </ol>
+        </div>
+        <a href="{% url 'literalnie' %}"><button class="submit-button" id="start-button">**Zaczynajmy**</button></a>
+    </div>
+</body>
+</html>
