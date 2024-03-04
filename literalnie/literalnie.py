@@ -1,4 +1,5 @@
 from literalnie.models import FiveLetterWords
+from morfeusz2 import Morfeusz
 
 alfabet = "aąbcćdeęfghijklłmnńoóprsśtuwyzżź"
 
@@ -46,10 +47,39 @@ def words_tier_level(words):
         for letter in list(set(word)):
             sum_score += alfabetTier.find(letter) + 1
         tier.append([sum_score, word])
+
+    tier.sort(reverse=True)
+    tier = tier[:300]
+
+    for word_tier in tier:
+        morfeusz = Morfeusz()
+        analyses = morfeusz.analyse(word_tier[1])
+
+        if is_nominative(analyses):
+            word_tier[0] += 30
+
+        if is_singular(analyses):
+            word_tier[0] += 10
+
     tier.sort(reverse=True)
 
     return tier[:100]
 
+
+def is_nominative(analyses):
+    for analyse in analyses:
+        if "nom" in analyse[2][2]:
+            return True
+
+    return False
+
+
+def is_singular(analyses):
+    for analysis in analyses:
+        if "sg" in analysis[2][2]:
+            return True
+
+    return False
 
 def not_in_word_error_check(not_in_word):
     for i in range(len(not_in_word)):
