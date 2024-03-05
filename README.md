@@ -1,20 +1,52 @@
-# Cheat Sheet App
+# Wordle/Literalnie PL Calculator
 
-This Django project is a cheat sheet app that consists of multiple modules, each providing cheat sheets for different games. The first module is Literalnie Cheat Sheet.
+## Project Overview 🌟
 
-## Literalnie Cheat Sheet
-[Literalnie Game](https://literalnie.fun)
+This project serves as a sophisticated tool for calculating the best possible word guess in the Wordle or Literalnie game specifically tailored for the Polish language. It is an assistant that evaluates the information provided about the current state of the word and suggests the most strategic choice for the next move. Words are ranked based on the frequency of letters they contain in the Polish language and whether they are in the nominative case, which is a requirement for words to be valid solutions in Wordle/Literalnie.
 
+A significant feature of this project is the implementation of Morfeusz2, a comprehensive tool for the morphological analysis of Polish language, which allows for the identification of word formations including grammatical cases. This feature is crucial for the app's functionality as it ensures the accuracy of the word analysis.
 
-Literalnie Cheat Sheet is an application designed to help users find words that meet specific criteria. Users enter letters into designated fields, and after submitting the criteria, the application returns a list of up to 100 words that meet those criteria.
+## Technologies 🛠️
 
-The words are ranked using a specific algorithm that takes into account the frequency of letters in the Polish language. The word database is extensive, and users can remove words from the database from within the application by clicking the red button next to the word.
+The project is crafted using the Django framework and there are plans to expand its capabilities to include other word games.
 
-### Usage
-To use the Literalnie Cheat Sheet, simply navigate to the module's webpage and follow the instructions. Enter the letters into the designated fields and submit the criteria. The application will return a list of words that meet the criteria, ranked according to the algorithm.
+## Features ✨
 
-### Acknowledgements
-This project was created to provide users with helpful cheat sheets for various games.
+- Input letters that definitely do not appear in the word.
+- Input letters that are certainly in the word but their exact positions are unknown.
+- Input letters that are confirmed to be in specific positions.
+- Analysis of letter frequency within the Polish language.
+- Verification of words being in the nominative case to comply with Wordle/Literalnie rules.
+- Advanced word-formation analysis utilizing Morfeusz2.
 
-## License
-This project is licensed under the MIT License.
+## Requirements 📋
+
+- Python (specified version)
+- Django (specified version)
+- Morfeusz2 library
+
+## Installation 🔧
+
+1. Clone the repository to your local machine.
+2. Install the required dependencies with `pip install -r requirements.txt`.
+3. Launch the Django server using `python manage.py runserver`.
+
+## Usage 🎮
+
+To use the Wordle/Literalnie PL calculator:
+
+1. Open the main page of the application.
+2. Enter the known information about the word as per the instructions on the site.
+3. Submit the data to receive the suggested optimal word for your game.
+
+## License 📄
+
+Specify the type of license under which the project is released (e.g., MIT, GPL).
+
+## Contributions 🤝
+
+If you are interested in contributing to the project, please reach out.
+
+---
+
+The project is continuously evolving, and all suggestions and contributions are welcome!
