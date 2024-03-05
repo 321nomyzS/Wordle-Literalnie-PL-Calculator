@@ -6,6 +6,14 @@ This project serves as a sophisticated tool for calculating the best possible wo
 
 A significant feature of this project is the implementation of Morfeusz2, a comprehensive tool for the morphological analysis of Polish language, which allows for the identification of word formations including grammatical cases. This feature is crucial for the app's functionality as it ensures the accuracy of the word analysis.
 
+## Screenshot
+
+Here is a screenshot of the application in action:
+<p align="center">
+  <img src="screenshots/screenshot-2.png" height="300" style="margin-right: 50px;" />
+  <img src="screenshots/screenshot-3.png" height="300" />
+</p>
+
 ## Technologies 🛠️
 
 The project is crafted using the Django framework and there are plans to expand its capabilities to include other word games.
