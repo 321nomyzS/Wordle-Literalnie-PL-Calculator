@@ -6,7 +6,7 @@ This project serves as a sophisticated tool for calculating the best possible wo
 
 A significant feature of this project is the implementation of Morfeusz2, a comprehensive tool for the morphological analysis of Polish language, which allows for the identification of word formations including grammatical cases. This feature is crucial for the app's functionality as it ensures the accuracy of the word analysis.
 
-## Screenshot
+## Screenshot 📄
 
 Here is a screenshot of the application in action:
 <p align="center">
@@ -46,14 +46,6 @@ To use the Wordle/Literalnie PL calculator:
 1. Open the main page of the application.
 2. Enter the known information about the word as per the instructions on the site.
 3. Submit the data to receive the suggested optimal word for your game.
-
-## License 📄
-
-Specify the type of license under which the project is released (e.g., MIT, GPL).
-
-## Contributions 🤝
-
-If you are interested in contributing to the project, please reach out.
 
 ---
 
